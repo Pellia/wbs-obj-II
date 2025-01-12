@@ -1,13 +1,20 @@
-// Book Constructor
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
+// Class Book
+class Book {
+    #title;
+    #author;
+    #pages;
+    #isRead;
 
-    this.summary = function () {
-        return `Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}, Read: ${this.isRead}.`;
-    };
+    constructor(title, author, pages, isRead) {
+        this.#title = title;
+        this.#author = author;
+        this.#pages = pages;
+        this.#isRead = isRead;
+    }
+
+    summary() {
+        return `Title: ${this.#title}, Author: ${this.#author}, Pages: ${this.#pages}, Read: ${this.#isRead}.`;
+    }
 }
 
 // Create different Book Objects
@@ -23,12 +30,3 @@ console.log(book2.summary());
 console.log(book3.summary());
 console.log(book4.summary());
 console.log(book5.summary());
-
-// Add new method using JS prototype property
-Book.prototype.summary2 = function () {
-    return `Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}, Read: ${this.isRead}.`;
-};
-
-// Get Prototype Summary
-console.log("\nPrototype Method:");
-console.log(book1.summary2());
